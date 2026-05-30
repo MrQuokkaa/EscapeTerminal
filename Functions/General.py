@@ -1,2 +1,5 @@
+def normalize(text):
+    return text.strip().lower().replace(" ", "")
+
 def get_input(prompt="> "):
-    return input(prompt).strip().lower()
+    return normalize(input(prompt))

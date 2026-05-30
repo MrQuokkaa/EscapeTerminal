@@ -1,9 +1,13 @@
-from Database.Locations import places
+from Database.Locations import locations
+from Core.Parser import verb
 
-def go_to(place_name):
-    place_name = place_name.lower().strip()
-
-    if place_name in places:
-        places[place_name]()
+def go_to(target, modifier=None):
+    if not target:
+        print("Where?")
+        return
+    
+    if target in locations:
+        print(f"You {verb} to {locations}")
+        locations[target]()
     else:
-        print("That place doesn't exist.")
+        print("That destination doesn't exist.")
